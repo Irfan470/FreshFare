@@ -1,8 +1,10 @@
 // 
-import React from "react";
+import React, { useContext } from "react";
 import Center from "./Center";
 import styled from "styled-components";
 import Button from "./Button";
+import Link from "next/link";
+import { CartContext } from "./CartContext";
 
 const StyledImage = styled.img`
   max-width: 60%;
@@ -24,6 +26,7 @@ const ProductContainer = styled.div`
 const ProductTitle = styled.h2`
   font-size: 24px;
   margin-bottom: 10px;
+ 
 `;
 
 const ProductDescription = styled.p`
@@ -42,21 +45,37 @@ const ProductGrid = styled.div`
   gap: 20px;
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+
+
 export default function Featured({ products }) {
+  const {setCart} = useContext(CartContext);
+  function addToCart() {
+    setCart((prev) => [...prev, products._id]);
+    alert("Added to cart!");
+  }
   return (
     <div>
       <Center>
         <ProductGrid>
           {products.map((product) => (
             <ProductContainer key={product.id}>
-              <StyledImage src={product.images[0]} alt={product.title} />
+              <StyledImage
+                src={product.images[0]}
+                alt={product.title}
+              />
               <ProductTitle>{product.title}</ProductTitle>
               <ProductDescription>{product.description}</ProductDescription>
               <ProductPrice>Price: ${product.price}</ProductPrice>
-              <div>
+              <ButtonsContainer>
                 <Button>Learn More</Button>
-                <Button primary>Shop Now</Button>
-              </div>
+                <Button primary onClick={addToCart} >Shop Now</Button>
+              </ButtonsContainer>
             </ProductContainer>
           ))}
         </ProductGrid>

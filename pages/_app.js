@@ -1,4 +1,5 @@
 
+import { CartContextProvider } from '@/components/CartContext';
 import React from 'react';  
 
 
@@ -14,12 +15,14 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 export default function App({ Component, pageProps }) {
-  return( 
-  <>
-    <GlobalStyles />
-    <Component {...pageProps} />
-  </>
-  )
+  return (
+    <>
+      <GlobalStyles />
+      <CartContextProvider>
+        <Component {...pageProps} />
+      </CartContextProvider>
+    </>
+  );
  
  
 }
