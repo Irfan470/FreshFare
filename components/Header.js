@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { CartContext } from "./CartContext";
 const HeaderContainer = styled.header`
-  background-color: #f8f8f8;
+  background-color: #595736;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 10px 0;
 `;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #28a745;
+  background-color: #733c1d;
   padding: 0 20px;
 
   @media (max-width: 768px) {
@@ -44,6 +51,8 @@ const NavLink = styled.a`
 `;
 
 const Header = () => {
+  const { cart } = useContext(CartContext);
+ 
   return (
     <HeaderContainer>
       <Nav>
@@ -59,7 +68,7 @@ const Header = () => {
             <NavLink href="/about">About</NavLink>
           </li>
           <li>
-            <NavLink href="/cart">Cart(0)</NavLink>
+            <NavLink href="/cart">Cart({cart.length})</NavLink>
           </li>
         </ul>
       </Nav>
@@ -68,3 +77,4 @@ const Header = () => {
 };
 
 export default Header;
+

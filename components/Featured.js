@@ -1,4 +1,4 @@
-// 
+//
 import React, { useContext } from "react";
 import Center from "./Center";
 import styled from "styled-components";
@@ -26,7 +26,6 @@ const ProductContainer = styled.div`
 const ProductTitle = styled.h2`
   font-size: 24px;
   margin-bottom: 10px;
- 
 `;
 
 const ProductDescription = styled.p`
@@ -51,20 +50,15 @@ const ButtonsContainer = styled.div`
   margin-top: 20px;
 `;
 
-
-
 export default function Featured({ products }) {
-  const {setCart} = useContext(CartContext);
-  function addToCart() {
-    setCart((prev) => [...prev, products._id]);
-    alert("Added to cart!");
-  }
+  const { cart, addToCart } = useContext(CartContext);
   return (
     <div>
       <Center>
+      
         <ProductGrid>
           {products.map((product) => (
-            <ProductContainer key={product.id}>
+            <ProductContainer key={product._id}>
               <StyledImage
                 src={product.images[0]}
                 alt={product.title}
@@ -74,7 +68,12 @@ export default function Featured({ products }) {
               <ProductPrice>Price: ${product.price}</ProductPrice>
               <ButtonsContainer>
                 <Button>Learn More</Button>
-                <Button primary onClick={addToCart} >Shop Now</Button>
+                <Button
+                  primary
+                onClick={() => addToCart(product._id)}
+                >
+                  Shop Now
+                </Button>
               </ButtonsContainer>
             </ProductContainer>
           ))}

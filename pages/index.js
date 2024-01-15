@@ -12,9 +12,9 @@ export default function index({ product, newProducts }) {
   return (
     <div>
       <Header />
+      <MainProductPage product={product} />
       <Featured products={newProducts} />
-    
-      {/* <Products products={newProducts}/> */}
+
       <Footer />
     </div>
   );

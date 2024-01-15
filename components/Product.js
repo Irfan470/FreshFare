@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from './Button';
 import styled from 'styled-components';
 import Center from './Center';
+import { CartContext } from './CartContext';
 
 const ProductContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 150px;
 `;
 
 const ImageSlider = styled.div`
@@ -60,18 +62,20 @@ const Description = styled.p`
         font-size: 16px;
         color: #333;
         margin-bottom: 10px;
+        text-align: center;
+        line-height: 1.5;
 `;
 
 const TitleDescriptionBox = styled.div`
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
   width: 100%;
   border: 1px solid #ccc;
-  background-color: #B2945B;
-  margin-bottom: 20px;
-  ;
+  background-color: #b2945b;
+  margin: 20px auto; /* Center horizontally */
+  justify-content: center;
+  align-items: center;
 `;
 const Price = styled.p`
   font-size: 18px;
@@ -81,16 +85,32 @@ const Price = styled.p`
 justify-content: center;
 `;
        
+const ButtonWrapper = styled(Button)`
+        margin-bottom: 20px;
+`;
+const StyledTitle = styled.h1`
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+`;
 
-const MainProductPage = ({ featuredProduct }) => {
-        const [selectedImage, setSelectedImage] = useState(featuredProduct.images[0]);
+const MainProductPage = ({ product }) => {
+        const [selectedImage, setSelectedImage] = useState(product.images[0]);
 
         const handleThumbnailClick = (image) => {
                 setSelectedImage(image);
         };
+        const productId = product._id;
+        const {addToCart}=useContext(CartContext);
+         function addProductToCart() {
+           addToCart( productId);
+           
+         }
 
         return (
             <ProductContainer>
+            
+            <StyledTitle>Todays Special</StyledTitle>
                 <ImageSlider>
                     <Image
                         src={selectedImage}
@@ -98,7 +118,7 @@ const MainProductPage = ({ featuredProduct }) => {
                     />
                 </ImageSlider>
                 <ThumbnailList>
-                    {featuredProduct.images.map((image, index) => (
+                    {product.images.map((image, index) => (
                         <ThumbnailImage
                             key={index}
                             src={image}
@@ -109,11 +129,11 @@ const MainProductPage = ({ featuredProduct }) => {
                 </ThumbnailList>
                 <Center>
                     <TitleDescriptionBox>
-                        <Title>{featuredProduct.title}</Title>
-                        <Description>{featuredProduct.description}</Description>
-                        <Price>Price: ${featuredProduct.price}</Price>
+                        <Title>{product.title}</Title>
+                        <Description>{product.description}</Description>
+                        <Price>Price: ${product.price}</Price>
                     </TitleDescriptionBox>
-                    <Button primary>Add to Cart</Button>
+                    <ButtonWrapper primary onClick={addProductToCart}>Add to Cart</ButtonWrapper>
                 </Center>
             </ProductContainer>
         );

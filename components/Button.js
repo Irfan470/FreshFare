@@ -11,9 +11,19 @@ const StyledButton = styled.button`
   cursor: pointer;
   transition: 0.3s ease-in-out;
   margin-right: 20px;
-  
-  ${props => props.primary && css`
-    background-color: #28a745;
+
+  ${(props) =>
+    props.primary &&
+    css`
+      background-color: #28a745;
+    `}
+  ${(props) =>
+    props.small &&
+    css`
+      background-color: #333;
+      padding: 5px 10px;
+      font-size: 14px;
+      
     `}
 `;
 
