@@ -21,9 +21,9 @@ const StyledButton = styled.button`
     props.small &&
     css`
       background-color: #333;
-      padding: 5px 10px;
+      padding: 1px 10px;
       font-size: 14px;
-      
+
     `}
 `;
 

@@ -16,7 +16,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #733c1d;
+  background-color: #005a5b;
   padding: 0 20px;
 
   @media (max-width: 768px) {
@@ -28,26 +28,33 @@ const Nav = styled.nav`
 const Logo = styled.a`
   font-size: 24px;
   font-weight: bold;
-  color: #333;
-  text-decoration: none;
+  color:  #fff;
+  transition: 1s ease-in-out;
+
 `;
 
 const NavLink = styled.a`
   margin-left: 20px;
-  color: #333;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
+
+
   font-size: 18px;
   transition: 0.3s ease-in-out;
+
+
 
   &:hover {
     color: #666;
   }
 
+
   @media (max-width: 768px) {
     margin-top: 10px;
     margin-left: 0;
   }
+
+
 `;
 
 const Header = () => {
