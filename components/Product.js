@@ -3,6 +3,7 @@ import Button from './Button';
 import styled from 'styled-components';
 import Center from './Center';
 import { CartContext } from './CartContext';
+import { Image, ImageSlider, ThumbnailImage, ThumbnailList } from './ImageSlider';
 
 const ProductContainer = styled.div`
         display: flex;
@@ -11,46 +12,7 @@ const ProductContainer = styled.div`
         margin-top: 150px;
 `;
 
-const ImageSlider = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-`;
 
-const Image = styled.img`
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-
-        &:hover {
-                transform: scale(1.1);
-        }
-`;
-
-const ThumbnailList = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-`;
-
-const ThumbnailImage = styled.img`
-        width: 80px;
-        height: 80px;
-        object-fit: contain;
-        cursor: pointer;
-        margin: 0 5px;
-        border: 2px solid transparent;
-
-        &:hover {
-                border-color: #000;
-        }
-`;
 
 const Title = styled.h1`
         font-size: 24px;

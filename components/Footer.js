@@ -10,6 +10,7 @@ const FooterContainer = styled.footer`
 
   background-color: #bfb093;
   border-top: 1px solid #28a745;
+  
 `;
 
 const FooterText = styled.p`

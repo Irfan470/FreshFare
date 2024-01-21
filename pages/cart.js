@@ -12,6 +12,7 @@ const ColumnWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
   gap: 20px;
+  
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -22,12 +23,15 @@ const Box = styled.div`
   background-color: #c9ddc6;
   border-radius: 10px;
   padding: 30px;
+  
 `;
 
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  margin-bottom: 20px;
+
 `;
 
 const TableHead = styled.thead`
@@ -39,7 +43,8 @@ const TableHeader = styled.th`
   text-align: left;
 `;
 
-const TableBody = styled.tbody``;
+const TableBody = styled.tbody`
+`;
 
 const TableRow = styled.tr`
   border-bottom: 1px solid #ccc;

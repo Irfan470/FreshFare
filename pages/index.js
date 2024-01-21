@@ -2,7 +2,6 @@ import Featured from "@/components/Featured";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MainProductPage from "@/components/Product";
-import Products from "@/components/Products";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import React from "react";
