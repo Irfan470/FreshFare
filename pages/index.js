@@ -24,7 +24,7 @@ export async function getServerSideProps() {
   const product = await Product.findById(featuredProductId);
   const newProducts = await Product.find({}, null, {
     sort: { createdAt: -1 },
-    limit: 10,
+    limit: 50,
   });
   return {
     props: {

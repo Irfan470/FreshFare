@@ -22,7 +22,7 @@ const ProductContainer = styled.div`
 `;
 
 const ProductTitle = styled.h2`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
 `;
 const ProductLink = styled(Link)`
@@ -38,30 +38,25 @@ const ProductLink = styled(Link)`
   align-items: center;
 `;
 
-const ProductDescription = styled.p`
-  font-size: 16px;
-  margin-bottom: 10px;
-`;
-
 const ProductPrice = styled.p`
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
 `;
 
 const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, .5fr));
   gap: 20px;
 `;
 
 const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
+  align-items: center;
+  
 `;
-const ReadMore= styled(Link)`
-  text-decoration: none;
-  `;
+
 export default function Featured({ products }) {
   const { cart, addToCart } = useContext(CartContext);
   return (
@@ -76,21 +71,14 @@ export default function Featured({ products }) {
                   alt={product.title}
                 />
                 <ProductTitle>{product.title}</ProductTitle>
-                <ProductDescription>
-                
-                {product.description}</ProductDescription>
-                <ProductPrice>Price: ${product.price}</ProductPrice>
               </ProductLink>
               <ButtonsContainer>
-                <ReadMore href={`/item/${product._id}`}>
-                  <Button >Learn More</Button>
-                </ReadMore>
-
+                <ProductPrice>Price: ${product.price}</ProductPrice>
                 <Button
                   primary
                   onClick={() => addToCart(product._id)}
                 >
-                  Shop Now
+                 Buy
                 </Button>
               </ButtonsContainer>
             </ProductContainer>

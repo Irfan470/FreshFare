@@ -281,7 +281,7 @@ useEffect(() => {
                 name="country"
                 onChange={(e) => setCountry(e.target.value)}
               />
-              <Button primary onClick={goToPayment} >Checkout</Button>
+              <Button large primary onClick={goToPayment} >Checkout</Button>
             
             </Box>
           )}

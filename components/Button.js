@@ -5,8 +5,8 @@ const StyledButton = styled.button`
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -23,7 +23,13 @@ const StyledButton = styled.button`
       background-color: #333;
       padding: 1px 10px;
       font-size: 14px;
-
+    `}
+      ${(props) =>
+    props.large &&
+    css`
+      background-color: #333;
+      padding: 10px 20px;
+      font-size: 18px;
     `}
 `;
 

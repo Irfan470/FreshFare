@@ -50,8 +50,8 @@ const NavLink = styled.a`
 
 
   @media (max-width: 768px) {
-    margin-top: 10px;
-    margin-left: 0;
+   align-items: center;
+    
   }
 
 
