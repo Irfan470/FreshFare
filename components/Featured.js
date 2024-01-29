@@ -7,10 +7,11 @@ import Link from "next/link";
 import { CartContext } from "./CartContext";
 
 const StyledImage = styled.img`
-  max-width: 60%;
+  max-width: 90%;
   height: auto;
   margin: 0 auto;
   display: block;
+  max-height: 90px;
 `;
 
 const ProductContainer = styled.div`
