@@ -63,9 +63,9 @@ const AboutPage = () => {
           <br />
           <br />
           At FRESHFARE, we believe in the power of fresh and nutritious food.
-          That's why we carefully select each product to ensure its freshness
-          and taste. Whether you're looking for farm-fresh milk, organic
-          vegetables, or artisanal cheese, we've got you covered.
+          That&rsquo;s why we carefully select each product to ensure its
+          freshness and taste. Whether you&rsquo;re looking for farm-fresh milk,
+          organic vegetables, or artisanal cheese, we&rsquo;ve got you covered.
           <br />
           <br />
           Our team of dedicated professionals works tirelessly to bring you the
@@ -97,12 +97,11 @@ const AboutPage = () => {
         <Description>
           If you have any questions or inquiries, please feel free to contact us
           through our email address:
-          <Highlight>info@freshfare.com</Highlight> 
+          <Highlight>info@freshfare.com</Highlight>
           <br />
           or call us at <Highlight>1-800-123-4567</Highlight>
         </Description>
       </AboutContainer>
-
 
       <Footer />
     </>

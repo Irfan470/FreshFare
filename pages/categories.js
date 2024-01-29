@@ -47,11 +47,11 @@ export default function categories({ categories, catProducts }) {
       </MarginDiv>
       <Center>
         {categories.map((cat) => (
-          <div>
+          <div key={cat._id} >
             <CatHeading>{cat.name}</CatHeading>
             <div>
               {catProducts[cat._id].map((product) => (
-                <div>
+                <div key={product._id} >
                   <div>
                     <Featured products={catProducts[cat._id]} />
                   </div>
