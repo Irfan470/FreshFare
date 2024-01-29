@@ -8,7 +8,6 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-
 const CatHeading = styled.h1`
   font-size: 2rem;
   font-weight: 600;
@@ -21,13 +20,12 @@ const CatHeading = styled.h1`
   @media screen and (max-width: 480px) {
     font-size: 1.2rem;
   }
-
 `;
 const MarginDiv = styled.div`
-margin-top: 175px;
-first-child {
-  margin-top: 0;
-}
+  margin-top: 175px;
+  first-child {
+    margin-top: 0;
+  }
 `;
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -52,15 +50,15 @@ export default function categories({ categories, catProducts }) {
           <div>
             <CatHeading>{cat.name}</CatHeading>
             <div>
-        {catProducts[cat._id].map((product) => (
-          <div>
-            <div>
-              <Featured products={catProducts[cat._id]} />
+              {catProducts[cat._id].map((product) => (
+                <div>
+                  <div>
+                    <Featured products={catProducts[cat._id]} />
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
-            </div>
-        <StyledLink href={`/category/` + cat._id}>Show all </StyledLink>
+            <StyledLink href={`/category/` + cat._id}>Show all </StyledLink>
           </div>
         ))}
       </Center>
@@ -85,4 +83,3 @@ export async function getServerSideProps() {
     },
   };
 }
-
