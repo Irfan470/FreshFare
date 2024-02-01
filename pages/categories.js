@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
     color: #666;
   }
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 `;
 export default function categories({ categories, catProducts }) {
