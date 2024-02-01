@@ -27,38 +27,29 @@ const SocialMediaContainer = styled.div`
 `;
 
 const SocialMediaLink = styled.a`
-  margin: 0 10px;
-  color: #333;
+   margin: 0 10px;
+  color: #3e5c74;
+  font-size: 18px;
+  transition: 0.3s;
+
 `;
 
-const FacebookLogo = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 
-const EmailLogo = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 
-const InstagramLogo = styled.img`
-  width: 20px;
-  height: 20px;
-`;
 
 const Footer = () => {
   return (
-    <FooterContainer>
+  <FooterContainer>
       <FooterText>&copy; 2024 FreshFare - All rights reserved</FooterText>
       <SocialMediaContainer>
         <SocialMediaLink href="https://www.facebook.com">
-          
+         Facebook
         </SocialMediaLink>
-        <SocialMediaLink href="mailto:example@example.com">
-         
+        <SocialMediaLink href="mailto:amonium7@gmail.com">
+         Email
         </SocialMediaLink>
         <SocialMediaLink href="https://www.instagram.com">
-        
+         Instagram
         </SocialMediaLink>
       </SocialMediaContainer>
     </FooterContainer>
