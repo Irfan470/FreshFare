@@ -52,13 +52,13 @@ const Footer = () => {
       <FooterText>&copy; 2024 FreshFare - All rights reserved</FooterText>
       <SocialMediaContainer>
         <SocialMediaLink href="https://www.facebook.com">
-          <FacebookLogo src="/path/to/facebook-logo.png" alt="Facebook" />
+          
         </SocialMediaLink>
         <SocialMediaLink href="mailto:example@example.com">
-          <EmailLogo src="/path/to/email-logo.png" alt="Email" />
+         
         </SocialMediaLink>
         <SocialMediaLink href="https://www.instagram.com">
-          <InstagramLogo src="/path/to/instagram-logo.png" alt="Instagram" />
+        
         </SocialMediaLink>
       </SocialMediaContainer>
     </FooterContainer>
